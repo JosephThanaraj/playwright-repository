@@ -1,5 +1,5 @@
 // @ts-check
-import { test, expect } from '@playwright/test';
+import { test, expect, _baseTest } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('https://www.saucedemo.com/');
@@ -23,4 +23,25 @@ test('Navigating to Product Item page', async ({ page }) => {
     await expect(product_fleece_jacket).toBeVisible();
     await product_fleece_jacket.click();
     await expect(product_fleece_jacket).toBeVisible();
+});
+
+test('Adding and Removing Items to/in Cart', async ({ page }) => {
+  const product_tShirt = page.getByText('Sauce Labs Bolt T-Shirt');
+  const product_onesie = page.getByText('Sauce Labs Onesie');
+  const product_backpack = page.getByText('Sauce Labs Backpack');
+  const product_fleece_jacket = page.getByText('Sauce Labs Fleece Jacket');
+
+
+});
+
+test('User Checkout items in Cart', async ({ page }) => {
+  const product_onesie = page.getByText('Sauce Labs Onesie');
+  const product_backpack = page.getByText('Sauce Labs Backpack');
+  const product_fleece_jacket = page.getByText('Sauce Labs Fleece Jacket');
+
+
+});
+
+test('Filter functionality', async ({ page }) => {
+  
 });
