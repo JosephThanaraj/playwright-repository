@@ -1,5 +1,5 @@
 // @ts-check
-import { test, expect, _baseTest } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 // Helper function to add items to the cart
 async function addItemToCart(page, itemSelector) {
@@ -80,9 +80,4 @@ test.describe('Cart Interactions', () => {
     await expect(page).toHaveURL(/checkout-complete/);
     await expect(page.getByText('Thank you for your order!')).toBeVisible();
   });
-});
-
-
-test('Filter functionality', async ({ page }) => {
-  
 });

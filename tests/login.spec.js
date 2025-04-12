@@ -1,23 +1,21 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
+import { LoginPage } from '../pages/login.page';
+
+test.beforeEach(async ({ page }) => {
+    await page.goto('https://www.saucedemo.com/');
+});
 
 test('Login with valid credentials', async ({ page }) => {
-    await page.goto('https://www.saucedemo.com/');
-    await expect(page).toHaveURL(/saucedemo/);
-    await expect(page).toHaveTitle(/Swag Labs/);
-    await page.getByPlaceholder('Username').fill('standard_user');
-    await page.getByPlaceholder('Password').fill('secret_sauce');
-    await page.getByRole('button', {name: 'Login'}).click();
-    await expect(page).toHaveURL(/inventory/);
+    const loginPage = new LoginPage(page);
+    await loginPage.enterUsername('standard_user');
+    await loginPage.enterPassword('secret_sauce');
+    await loginPage.clickLogin();
 });
 
 test('Login with invalid credentials', async ({ page }) => {
-    await page.goto('https://www.saucedemo.com/');
-    await expect(page).toHaveURL(/saucedemo/);
-    await expect(page).toHaveTitle(/Swag Labs/);
-    await page.getByPlaceholder('Username').fill('unknown_user');
-    await page.getByPlaceholder('Password').fill('secret_sauce');
-    await page.getByRole('button', {name: 'Login'}).click();
-    await expect(page.getByText('Epic sadface: Username and password do not match any user in this service')).toBeVisible();
+    const loginPage = new LoginPage(page);
+    await loginPage.enterUsername('unknown_user');
+    await loginPage.enterPassword('secret_sauce');
+    await loginPage.clickLoginError();
 });
-
