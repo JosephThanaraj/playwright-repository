@@ -1,7 +1,8 @@
 // @ts-check
-import { test, expect, _baseTest } from '@playwright/test';
+// import { test, expect, _baseTest } from '@playwright/test';
+// Unused test spec file
 
-test('Adding and Removing Items to/in cart', async ({ page }) => {
+/* test('Adding and Removing Items to/in cart', async ({ page }) => {
   const product_onesie = page.getByText('Sauce Labs Onesie');
   const add_to_cart = page.getByRole('button', {name: "Add to cart"});
 
@@ -23,4 +24,4 @@ test('Adding and Removing Items to/in cart', async ({ page }) => {
   await expect(product_onesie).toBeVisible(); //Check item to be removed is in the cart
   await page.locator('[data-test="remove-sauce-labs-onesie"]').click();
   await expect(page.locator('[data-test="shopping-cart-badge"]')).toHaveCount(0); //Check item in the cart has been removed
-});
+}); */
