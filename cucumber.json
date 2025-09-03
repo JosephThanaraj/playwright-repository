@@ -1,0 +1,16 @@
+{
+  "default": {
+    "require": [
+      "cucumber/step_definitions/**/*.js",
+      "cucumber/support/**/*.js"
+    ],
+    "paths": ["cucumber/features/*.feature"],
+    "format": [
+      "progress-bar"
+    ],
+    "formatOptions": {
+      "snippetInterface": "synchronous"
+    },
+    "publishQuiet": true
+  }
+}

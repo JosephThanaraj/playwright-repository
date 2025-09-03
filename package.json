@@ -2,21 +2,33 @@
   "name": "playwright-repository",
   "version": "1.0.0",
   "description": "A simple set of UI Automation Tests using Playwright",
-  "main": "index.js",
-  "scripts": {},
+  "keywords": [],
+  "homepage": "https://github.com/JosephThanaraj/playwright-repository#readme",
+  "bugs": {
+    "url": "https://github.com/JosephThanaraj/playwright-repository/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JosephThanaraj/playwright-repository.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JosephThanaraj/playwright-repository/issues"
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
   },
-  "homepage": "https://github.com/JosephThanaraj/playwright-repository#readme",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:cucumber": "cucumber-js features/*.feature"
+
+  },
   "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.51.1",
     "@types/node": "^22.14.0"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
   }
 }
