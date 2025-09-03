@@ -1,4 +1,3 @@
-// @ts-check
 import { test } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
 
